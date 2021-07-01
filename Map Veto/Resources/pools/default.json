@@ -1,0 +1,14 @@
+{
+  "name": "Default Map Pool",
+  "maps": [
+    "Inferno",
+    "Mirage",
+    "Nuke",
+    "Overpass",
+    "Dust 2",
+    "Vertigo",
+    "Ancient",
+    "Cobblestone",
+    "Cache"
+  ]
+}
