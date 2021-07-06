@@ -29,145 +29,24 @@ namespace Map_Veto
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmbPools = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnLoadPools = new System.Windows.Forms.Button();
-            this.lstMaps = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtT1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtT2 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cmbStyle = new System.Windows.Forms.ComboBox();
-            this.btnAct = new System.Windows.Forms.Button();
-            this.lstVetoed = new System.Windows.Forms.ListBox();
-            this.lstPicked = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lblRemaining = new System.Windows.Forms.Label();
+            this.btnAct = new MaterialSkin.Controls.MaterialButton();
+            this.lstVetoed = new MaterialSkin.Controls.MaterialListBox();
+            this.lstPicked = new MaterialSkin.Controls.MaterialListBox();
+            this.lstMaps = new MaterialSkin.Controls.MaterialListBox();
+            this.cmbStyle = new MaterialSkin.Controls.MaterialComboBox();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.txtT2 = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.txtT1 = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.cmbPools = new MaterialSkin.Controls.MaterialComboBox();
+            this.lblRemaining = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
+            this.btnLoadPools = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
-            // 
-            // cmbPools
-            // 
-            this.cmbPools.FormattingEnabled = true;
-            this.cmbPools.Location = new System.Drawing.Point(103, 8);
-            this.cmbPools.Name = "cmbPools";
-            this.cmbPools.Size = new System.Drawing.Size(349, 23);
-            this.cmbPools.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 21);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Map Pool";
-            // 
-            // btnLoadPools
-            // 
-            this.btnLoadPools.Location = new System.Drawing.Point(473, 6);
-            this.btnLoadPools.Name = "btnLoadPools";
-            this.btnLoadPools.Size = new System.Drawing.Size(99, 25);
-            this.btnLoadPools.TabIndex = 2;
-            this.btnLoadPools.Text = "Load";
-            this.btnLoadPools.UseVisualStyleBackColor = true;
-            this.btnLoadPools.Click += new System.EventHandler(this.btnLoadPools_Click);
-            // 
-            // lstMaps
-            // 
-            this.lstMaps.FormattingEnabled = true;
-            this.lstMaps.ItemHeight = 15;
-            this.lstMaps.Location = new System.Drawing.Point(12, 58);
-            this.lstMaps.Name = "lstMaps";
-            this.lstMaps.Size = new System.Drawing.Size(202, 229);
-            this.lstMaps.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(244, 58);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 15);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Team 1 Name";
-            // 
-            // txtT1
-            // 
-            this.txtT1.Location = new System.Drawing.Point(342, 55);
-            this.txtT1.Name = "txtT1";
-            this.txtT1.Size = new System.Drawing.Size(230, 23);
-            this.txtT1.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(244, 103);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 15);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Team 2 Name";
-            // 
-            // txtT2
-            // 
-            this.txtT2.Location = new System.Drawing.Point(342, 100);
-            this.txtT2.Name = "txtT2";
-            this.txtT2.Size = new System.Drawing.Size(230, 23);
-            this.txtT2.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(254, 150);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 15);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Veto Style";
-            // 
-            // cmbStyle
-            // 
-            this.cmbStyle.FormattingEnabled = true;
-            this.cmbStyle.Items.AddRange(new object[] {
-            "Best of 1",
-            "Best of 3",
-            "Best of 5"});
-            this.cmbStyle.Location = new System.Drawing.Point(342, 147);
-            this.cmbStyle.Name = "cmbStyle";
-            this.cmbStyle.Size = new System.Drawing.Size(230, 23);
-            this.cmbStyle.TabIndex = 2;
-            // 
-            // btnAct
-            // 
-            this.btnAct.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAct.Location = new System.Drawing.Point(244, 194);
-            this.btnAct.Name = "btnAct";
-            this.btnAct.Size = new System.Drawing.Size(328, 93);
-            this.btnAct.TabIndex = 7;
-            this.btnAct.Text = "Start";
-            this.btnAct.UseVisualStyleBackColor = true;
-            this.btnAct.Click += new System.EventHandler(this.btnAct_Click);
-            // 
-            // lstVetoed
-            // 
-            this.lstVetoed.FormattingEnabled = true;
-            this.lstVetoed.ItemHeight = 15;
-            this.lstVetoed.Location = new System.Drawing.Point(12, 347);
-            this.lstVetoed.Name = "lstVetoed";
-            this.lstVetoed.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.lstVetoed.Size = new System.Drawing.Size(267, 94);
-            this.lstVetoed.TabIndex = 8;
-            // 
-            // lstPicked
-            // 
-            this.lstPicked.FormattingEnabled = true;
-            this.lstPicked.ItemHeight = 15;
-            this.lstPicked.Location = new System.Drawing.Point(302, 347);
-            this.lstPicked.Name = "lstPicked";
-            this.lstPicked.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.lstPicked.Size = new System.Drawing.Size(270, 94);
-            this.lstPicked.TabIndex = 8;
             // 
             // label5
             // 
@@ -177,84 +56,305 @@ namespace Map_Veto
             this.label5.Size = new System.Drawing.Size(0, 15);
             this.label5.TabIndex = 9;
             // 
-            // label6
+            // btnAct
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(121, 320);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 15);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Vetoed";
+            this.btnAct.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAct.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnAct.Depth = 0;
+            this.btnAct.HighEmphasis = true;
+            this.btnAct.Icon = null;
+            this.btnAct.Location = new System.Drawing.Point(434, 362);
+            this.btnAct.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnAct.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAct.Name = "btnAct";
+            this.btnAct.Size = new System.Drawing.Size(67, 36);
+            this.btnAct.TabIndex = 11;
+            this.btnAct.Text = "Start";
+            this.btnAct.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnAct.UseAccentColor = false;
+            this.btnAct.UseVisualStyleBackColor = true;
+            this.btnAct.Click += new System.EventHandler(this.btnAct_Click_1);
             // 
-            // label10
+            // lstVetoed
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(410, 320);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(42, 15);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Picked";
+            this.lstVetoed.BackColor = System.Drawing.Color.White;
+            this.lstVetoed.BorderColor = System.Drawing.Color.LightGray;
+            this.lstVetoed.Depth = 0;
+            this.lstVetoed.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lstVetoed.Location = new System.Drawing.Point(6, 449);
+            this.lstVetoed.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lstVetoed.Name = "lstVetoed";
+            this.lstVetoed.SelectedIndex = -1;
+            this.lstVetoed.SelectedItem = null;
+            this.lstVetoed.Size = new System.Drawing.Size(311, 222);
+            this.lstVetoed.TabIndex = 12;
+            // 
+            // lstPicked
+            // 
+            this.lstPicked.BackColor = System.Drawing.Color.White;
+            this.lstPicked.BorderColor = System.Drawing.Color.LightGray;
+            this.lstPicked.Depth = 0;
+            this.lstPicked.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lstPicked.Location = new System.Drawing.Point(350, 449);
+            this.lstPicked.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lstPicked.Name = "lstPicked";
+            this.lstPicked.SelectedIndex = -1;
+            this.lstPicked.SelectedItem = null;
+            this.lstPicked.Size = new System.Drawing.Size(311, 222);
+            this.lstPicked.TabIndex = 12;
+            // 
+            // lstMaps
+            // 
+            this.lstMaps.BackColor = System.Drawing.Color.White;
+            this.lstMaps.BorderColor = System.Drawing.Color.LightGray;
+            this.lstMaps.Depth = 0;
+            this.lstMaps.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lstMaps.Location = new System.Drawing.Point(12, 150);
+            this.lstMaps.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lstMaps.Name = "lstMaps";
+            this.lstMaps.SelectedIndex = -1;
+            this.lstMaps.SelectedItem = null;
+            this.lstMaps.Size = new System.Drawing.Size(219, 245);
+            this.lstMaps.TabIndex = 12;
+            // 
+            // cmbStyle
+            // 
+            this.cmbStyle.AutoResize = false;
+            this.cmbStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmbStyle.Depth = 0;
+            this.cmbStyle.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmbStyle.DropDownHeight = 174;
+            this.cmbStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStyle.DropDownWidth = 121;
+            this.cmbStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmbStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmbStyle.FormattingEnabled = true;
+            this.cmbStyle.IntegralHeight = false;
+            this.cmbStyle.ItemHeight = 43;
+            this.cmbStyle.Items.AddRange(new object[] {
+            "Best of 1",
+            "Best of 2",
+            "Best of 3",
+            "Best of 5"});
+            this.cmbStyle.Location = new System.Drawing.Point(350, 295);
+            this.cmbStyle.MaxDropDownItems = 4;
+            this.cmbStyle.MouseState = MaterialSkin.MouseState.OUT;
+            this.cmbStyle.Name = "cmbStyle";
+            this.cmbStyle.Size = new System.Drawing.Size(311, 49);
+            this.cmbStyle.StartIndex = 0;
+            this.cmbStyle.TabIndex = 13;
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.Location = new System.Drawing.Point(258, 309);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(72, 19);
+            this.materialLabel1.TabIndex = 14;
+            this.materialLabel1.Text = "Veto Style";
+            // 
+            // txtT2
+            // 
+            this.txtT2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtT2.Depth = 0;
+            this.txtT2.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtT2.LeadingIcon = null;
+            this.txtT2.Location = new System.Drawing.Point(350, 227);
+            this.txtT2.MaxLength = 50;
+            this.txtT2.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtT2.Multiline = false;
+            this.txtT2.Name = "txtT2";
+            this.txtT2.Size = new System.Drawing.Size(311, 50);
+            this.txtT2.TabIndex = 15;
+            this.txtT2.Text = "";
+            this.txtT2.TrailingIcon = null;
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel2.Location = new System.Drawing.Point(262, 242);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(55, 19);
+            this.materialLabel2.TabIndex = 14;
+            this.materialLabel2.Text = "Team 2";
+            // 
+            // txtT1
+            // 
+            this.txtT1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtT1.Depth = 0;
+            this.txtT1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtT1.LeadingIcon = null;
+            this.txtT1.Location = new System.Drawing.Point(350, 156);
+            this.txtT1.MaxLength = 50;
+            this.txtT1.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtT1.Multiline = false;
+            this.txtT1.Name = "txtT1";
+            this.txtT1.Size = new System.Drawing.Size(311, 50);
+            this.txtT1.TabIndex = 15;
+            this.txtT1.Text = "";
+            this.txtT1.TrailingIcon = null;
+            // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel3.Location = new System.Drawing.Point(262, 174);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(55, 19);
+            this.materialLabel3.TabIndex = 14;
+            this.materialLabel3.Text = "Team 1";
+            // 
+            // cmbPools
+            // 
+            this.cmbPools.AutoResize = false;
+            this.cmbPools.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmbPools.Depth = 0;
+            this.cmbPools.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmbPools.DropDownHeight = 174;
+            this.cmbPools.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPools.DropDownWidth = 121;
+            this.cmbPools.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmbPools.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmbPools.FormattingEnabled = true;
+            this.cmbPools.IntegralHeight = false;
+            this.cmbPools.ItemHeight = 43;
+            this.cmbPools.Location = new System.Drawing.Point(149, 80);
+            this.cmbPools.MaxDropDownItems = 4;
+            this.cmbPools.MouseState = MaterialSkin.MouseState.OUT;
+            this.cmbPools.Name = "cmbPools";
+            this.cmbPools.Size = new System.Drawing.Size(352, 49);
+            this.cmbPools.StartIndex = 0;
+            this.cmbPools.TabIndex = 13;
             // 
             // lblRemaining
             // 
             this.lblRemaining.AutoSize = true;
-            this.lblRemaining.Location = new System.Drawing.Point(62, 290);
+            this.lblRemaining.Depth = 0;
+            this.lblRemaining.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblRemaining.Location = new System.Drawing.Point(56, 398);
+            this.lblRemaining.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblRemaining.Name = "lblRemaining";
-            this.lblRemaining.Size = new System.Drawing.Size(102, 15);
-            this.lblRemaining.TabIndex = 10;
+            this.lblRemaining.Size = new System.Drawing.Size(129, 19);
+            this.lblRemaining.TabIndex = 14;
             this.lblRemaining.Text = "Waiting for Data...";
             this.lblRemaining.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // materialLabel4
+            // 
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel4.Location = new System.Drawing.Point(135, 427);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(50, 19);
+            this.materialLabel4.TabIndex = 14;
+            this.materialLabel4.Text = "Vetoed";
+            this.materialLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // materialLabel5
+            // 
+            this.materialLabel5.AutoSize = true;
+            this.materialLabel5.Depth = 0;
+            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel5.Location = new System.Drawing.Point(483, 427);
+            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel5.Name = "materialLabel5";
+            this.materialLabel5.Size = new System.Drawing.Size(48, 19);
+            this.materialLabel5.TabIndex = 14;
+            this.materialLabel5.Text = "Picked";
+            this.materialLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // materialLabel6
+            // 
+            this.materialLabel6.AutoSize = true;
+            this.materialLabel6.Depth = 0;
+            this.materialLabel6.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel6.Location = new System.Drawing.Point(40, 95);
+            this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel6.Name = "materialLabel6";
+            this.materialLabel6.Size = new System.Drawing.Size(69, 19);
+            this.materialLabel6.TabIndex = 14;
+            this.materialLabel6.Text = "Map Pool";
+            // 
+            // btnLoadPools
+            // 
+            this.btnLoadPools.AutoSize = false;
+            this.btnLoadPools.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnLoadPools.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnLoadPools.Depth = 0;
+            this.btnLoadPools.HighEmphasis = true;
+            this.btnLoadPools.Icon = null;
+            this.btnLoadPools.Location = new System.Drawing.Point(548, 85);
+            this.btnLoadPools.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnLoadPools.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnLoadPools.Name = "btnLoadPools";
+            this.btnLoadPools.Size = new System.Drawing.Size(75, 36);
+            this.btnLoadPools.TabIndex = 16;
+            this.btnLoadPools.Text = "Load";
+            this.btnLoadPools.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnLoadPools.UseAccentColor = true;
+            this.btnLoadPools.UseVisualStyleBackColor = true;
+            this.btnLoadPools.Click += new System.EventHandler(this.btnLoadPools_Click_1);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 461);
+            this.ClientSize = new System.Drawing.Size(667, 677);
+            this.Controls.Add(this.btnLoadPools);
+            this.Controls.Add(this.txtT1);
+            this.Controls.Add(this.txtT2);
+            this.Controls.Add(this.materialLabel6);
+            this.Controls.Add(this.materialLabel3);
+            this.Controls.Add(this.materialLabel2);
+            this.Controls.Add(this.materialLabel5);
+            this.Controls.Add(this.materialLabel4);
             this.Controls.Add(this.lblRemaining);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.materialLabel1);
+            this.Controls.Add(this.cmbPools);
+            this.Controls.Add(this.cmbStyle);
             this.Controls.Add(this.lstPicked);
+            this.Controls.Add(this.lstMaps);
             this.Controls.Add(this.lstVetoed);
             this.Controls.Add(this.btnAct);
-            this.Controls.Add(this.cmbStyle);
-            this.Controls.Add(this.txtT2);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtT1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.lstMaps);
-            this.Controls.Add(this.btnLoadPools);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cmbPools);
+            this.Controls.Add(this.label5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Main";
             this.Text = "Map Veto by Andrés Caraballo";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cmbPools;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnLoadPools;
-        private System.Windows.Forms.ListBox lstMaps;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtT1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtT2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cmbStyle;
-        private System.Windows.Forms.Button btnAct;
-        private System.Windows.Forms.ListBox lstVetoed;
-        private System.Windows.Forms.ListBox lstPicked;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label lblRemaining;
+        private MaterialSkin.Controls.MaterialButton btnAct;
+        private MaterialSkin.Controls.MaterialListBox lstVetoed;
+        private MaterialSkin.Controls.MaterialListBox lstPicked;
+        private MaterialSkin.Controls.MaterialListBox lstMaps;
+        private MaterialSkin.Controls.MaterialComboBox cmbStyle;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialTextBox txtT2;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialTextBox txtT1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialComboBox cmbPools;
+        private MaterialSkin.Controls.MaterialLabel lblRemaining;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private MaterialSkin.Controls.MaterialLabel materialLabel5;
+        private MaterialSkin.Controls.MaterialLabel materialLabel6;
+        private MaterialSkin.Controls.MaterialButton btnLoadPools;
     }
 }
 

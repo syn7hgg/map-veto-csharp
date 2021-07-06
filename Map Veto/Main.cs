@@ -10,10 +10,12 @@ using System.Windows.Forms;
 using System.IO;
 using System.Reflection;
 using Newtonsoft.Json;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace Map_Veto
 {
-    public partial class Main : Form
+    public partial class Main : MaterialForm
     {
         public int phase = 0;
         public List<MapPool> pools = new List<MapPool>();
@@ -30,6 +32,47 @@ namespace Map_Veto
         }
 
         public void Bo1Veto()
+        {
+            MessageBox.Show(maps.Count + " | " + lstMaps.Count, "Count");
+            if (phase == 1)
+            {
+                btnAct.Text = t1Name + " VETO";
+            }
+            if (phase % 2 == 0)
+            {
+                btnAct.Text = t2Name + " VETO";
+            }
+            if (phase % 2 != 0 && phase != 1)
+            {
+                btnAct.Text = t1Name + " VETO";
+            }
+            if (phase != 1)
+            {
+                if (lstMaps.SelectedItem == null)
+                {
+                    MessageBox.Show("You must select a map.", "Invalid action");
+                    return;
+                }
+                lstVetoed.Items.Add(lstMaps.SelectedItem);
+                maps.Remove(lstMaps.SelectedItem.Text.ToString().Trim());
+                lstMaps.Items.Remove(lstMaps.SelectedItem);
+            }
+            lblRemaining.Text = "Maps Remaining: " + maps.Count;
+            lstMaps.SelectedIndex = -1;
+
+            if (maps.Count <= 3)
+            {
+                var random = new Random();
+                int randIndex = random.Next(maps.Count);
+                string randSelected = maps[randIndex];
+                lstPicked.Items.Clear();
+                lstPicked.Items.Add(new MaterialListBoxItem(randSelected));
+                MessageBox.Show("Map veto has ended.\nSelected map is: " + randSelected, "Veto end", MessageBoxButtons.OK);
+                return;
+            }
+        }
+
+        public void Bo3Veto()
         {
             if (phase == 1)
             {
@@ -50,7 +93,7 @@ namespace Map_Veto
                     MessageBox.Show("You must select a map.", "Invalid action");
                     return;
                 }
-                lstVetoed.Items.Add(lstMaps.SelectedItem.ToString());
+                lstVetoed.Items.Add(lstMaps.SelectedItem);
                 maps.Remove(lstMaps.SelectedItem.ToString().Trim());
                 lstMaps.Items.Remove(lstMaps.SelectedItem);
             }
@@ -62,7 +105,7 @@ namespace Map_Veto
                 int randIndex = random.Next(maps.Count);
                 string randSelected = maps[randIndex];
                 lstPicked.Items.Clear();
-                lstPicked.Items.Add(randSelected);
+                lstPicked.Items.Add(new MaterialListBoxItem(randSelected));
                 MessageBox.Show("Map veto has ended.\nSelected map is: " + randSelected, "Veto end", MessageBoxButtons.OK);
                 return;
             }
@@ -71,6 +114,11 @@ namespace Map_Veto
         public Main()
         {
             InitializeComponent();
+
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
 
             string appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             string appDir = Path.Combine(appData, "MapVeto");
@@ -93,7 +141,7 @@ namespace Map_Veto
             foreach (string map in pool.maps)
             {
                 maps.Add(map);
-                lstMaps.Items.Add(map);
+                lstMaps.Items.Add(new MaterialListBoxItem(map));
             }
 
             lblRemaining.Text = "Maps Remaining: " + maps.Count;
@@ -138,6 +186,53 @@ namespace Map_Veto
             {
                 MessageBox.Show("An error has ocurred.", "Error", MessageBoxButtons.OK);
             }
+        }
+
+        private void btnAct_Click_1(object sender, EventArgs e)
+        {
+            phase++;
+            t1Name = txtT1.Text;
+            t2Name = txtT2.Text;
+            txtT1.Enabled = false;
+            txtT2.Enabled = false;
+            cmbPools.Enabled = false;
+            btnLoadPools.Enabled = false;
+            cmbStyle.Enabled = false;
+
+            if (cmbStyle.Text.ToLower() == "best of 1")
+            {
+                Bo1Veto();
+            }
+            else if (cmbStyle.Text.ToLower() == "best of 3")
+            {
+
+            }
+            else if (cmbStyle.Text.ToLower() == "best of 5")
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("An error has ocurred.", "Error", MessageBoxButtons.OK);
+            }
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLoadPools_Click_1(object sender, EventArgs e)
+        {
+            MapPool pool = pools.Find(x => x.name == cmbPools.Text.Trim());
+            string filePath = pool.filePath;
+            foreach (string map in pool.maps)
+            {
+                maps.Add(map);
+                lstMaps.Items.Add(new MaterialListBoxItem(map));
+            }
+
+            lblRemaining.Text = "Maps Remaining: " + maps.Count;
         }
     }
 
