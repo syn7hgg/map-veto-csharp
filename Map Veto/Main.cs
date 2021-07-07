@@ -1,14 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Reflection;
 using Newtonsoft.Json;
 using MaterialSkin;
 using MaterialSkin.Controls;
@@ -33,7 +26,6 @@ namespace Map_Veto
 
         public void Bo1Veto()
         {
-            MessageBox.Show(maps.Count + " | " + lstMaps.Count, "Count");
             if (phase == 1)
             {
                 btnAct.Text = t1Name + " VETO";
@@ -68,45 +60,9 @@ namespace Map_Veto
                 lstPicked.Items.Clear();
                 lstPicked.Items.Add(new MaterialListBoxItem(randSelected));
                 MessageBox.Show("Map veto has ended.\nSelected map is: " + randSelected, "Veto end", MessageBoxButtons.OK);
-                return;
-            }
-        }
-
-        public void Bo3Veto()
-        {
-            if (phase == 1)
-            {
-                btnAct.Text = t1Name + " VETO";
-            }
-            if (phase % 2 == 0)
-            {
-                btnAct.Text = t2Name + " VETO";
-            }
-            if (phase % 2 != 0 && phase != 1)
-            {
-                btnAct.Text = t1Name + " VETO";
-            }
-            if (phase != 1)
-            {
-                if (lstMaps.SelectedItem == null)
-                {
-                    MessageBox.Show("You must select a map.", "Invalid action");
-                    return;
-                }
-                lstVetoed.Items.Add(lstMaps.SelectedItem);
-                maps.Remove(lstMaps.SelectedItem.ToString().Trim());
-                lstMaps.Items.Remove(lstMaps.SelectedItem);
-            }
-            lblRemaining.Text = "Maps Remaining: " + maps.Count;
-
-            if (maps.Count <= 3)
-            {
-                var random = new Random();
-                int randIndex = random.Next(maps.Count);
-                string randSelected = maps[randIndex];
-                lstPicked.Items.Clear();
-                lstPicked.Items.Add(new MaterialListBoxItem(randSelected));
-                MessageBox.Show("Map veto has ended.\nSelected map is: " + randSelected, "Veto end", MessageBoxButtons.OK);
+                phase = -1000;
+                btnAct.Text = "Reset";
+                lblRemaining.Text = "Map(s) have been picked";
                 return;
             }
         }
@@ -132,19 +88,6 @@ namespace Map_Veto
                 pools.Add(poolData);
                 cmbPools.Items.Add(poolData.name);
             }
-        }
-
-        private void btnLoadPools_Click(object sender, EventArgs e)
-        {
-            MapPool pool = pools.Find(x => x.name == cmbPools.Text.Trim());
-            string filePath = pool.filePath;
-            foreach (string map in pool.maps)
-            {
-                maps.Add(map);
-                lstMaps.Items.Add(new MaterialListBoxItem(map));
-            }
-
-            lblRemaining.Text = "Maps Remaining: " + maps.Count;
         }
 
         /**
@@ -174,6 +117,10 @@ namespace Map_Veto
             {
                 Bo1Veto();
             }
+            else if (cmbStyle.Text.ToLower() == "best of 2")
+            {
+
+            }
             else if (cmbStyle.Text.ToLower() == "best of 3")
             {
 
@@ -190,6 +137,18 @@ namespace Map_Veto
 
         private void btnAct_Click_1(object sender, EventArgs e)
         {
+            if (phase == -1000)
+            {
+                Application.Restart();
+                Environment.Exit(0);
+            }
+
+            if (txtT1.Text == "" || txtT2.Text == "")
+            {
+                MessageBox.Show("Both teams need to have a name.", "Invalid Fields");
+                return;
+            }
+
             phase++;
             t1Name = txtT1.Text;
             t2Name = txtT2.Text;
@@ -233,6 +192,11 @@ namespace Map_Veto
             }
 
             lblRemaining.Text = "Maps Remaining: " + maps.Count;
+
+            txtT1.Enabled = true;
+            txtT2.Enabled = true;
+            cmbStyle.Enabled = true;
+            btnAct.Enabled = true;
         }
     }
 

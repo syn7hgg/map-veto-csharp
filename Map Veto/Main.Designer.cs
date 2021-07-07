@@ -61,6 +61,7 @@ namespace Map_Veto
             this.btnAct.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAct.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnAct.Depth = 0;
+            this.btnAct.Enabled = false;
             this.btnAct.HighEmphasis = true;
             this.btnAct.Icon = null;
             this.btnAct.Location = new System.Drawing.Point(434, 362);
@@ -126,6 +127,7 @@ namespace Map_Veto
             this.cmbStyle.DropDownHeight = 174;
             this.cmbStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStyle.DropDownWidth = 121;
+            this.cmbStyle.Enabled = false;
             this.cmbStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cmbStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cmbStyle.FormattingEnabled = true;
@@ -160,6 +162,7 @@ namespace Map_Veto
             // 
             this.txtT2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtT2.Depth = 0;
+            this.txtT2.Enabled = false;
             this.txtT2.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtT2.LeadingIcon = null;
             this.txtT2.Location = new System.Drawing.Point(350, 227);
@@ -188,6 +191,7 @@ namespace Map_Veto
             // 
             this.txtT1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtT1.Depth = 0;
+            this.txtT1.Enabled = false;
             this.txtT1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtT1.LeadingIcon = null;
             this.txtT1.Location = new System.Drawing.Point(350, 156);
@@ -236,6 +240,7 @@ namespace Map_Veto
             // 
             // lblRemaining
             // 
+            this.lblRemaining.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblRemaining.AutoSize = true;
             this.lblRemaining.Depth = 0;
             this.lblRemaining.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
